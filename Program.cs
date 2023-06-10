@@ -9,8 +9,7 @@ void InsereLinear(Aluno[] v, int nt, string nm, string em, ref int colisao)
 {
    int pos = Hash(nt);
    
-   while (v[pos]  != null)
-   {
+   while (v[pos]  != null) {
       pos++;
       pos = pos % N;
       colisao++;
@@ -63,7 +62,7 @@ int opcao = 0;
 while (opcao != 4) {
     Console.Clear();
     opcao = menu();
-    if (opcao == 1){
+    if (opcao == 1) {
         System.Console.Write("Digite a nota: ");
         int nota = Convert.ToInt32(Console.ReadLine());
         System.Console.Write("Digite o nome: ");
@@ -71,16 +70,15 @@ while (opcao != 4) {
         System.Console.Write("Digite o email: ");
         string email = Console.ReadLine() ?? "";
         InsereLinear(vetor, nota, nome, email, ref colisao);
-    }else if(opcao == 2){
+    }else if(opcao == 2) {
          System.Console.Write("Digite uma nota para pesquisar: ");
          int valorBuscado = Convert.ToInt32(Console.ReadLine());
          Recuperar(vetor, valorBuscado);
-      }else if(opcao == 3){
+      }else if(opcao == 3) {
          System.Console.Write($"Até o momento temos {colisao} colisões.");
          Console.ReadKey();
       }
 }
-
 class Aluno
 {
     public int Nota = 0;
